@@ -2,13 +2,12 @@ import { useRouter } from 'next/router';
 
 function YoutubeDetail() {
 	const router = useRouter();
+	console.log(router);
 
 	return (
 		<main>
 			<figure className='vidFrame'>
-				<iframe
-					src={`https://www.youtube.com/embed/${router.query.youtube}`}
-					frameBorder='0'></iframe>
+				<iframe src={`https://www.youtube.com/embed/${router.query.id}`} frameBorder='0'></iframe>
 			</figure>
 
 			<h1>{router.query.title}</h1>

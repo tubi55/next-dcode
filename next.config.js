@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-
+const withInterceptStdout = require('next-intercept-stdout');
 const youtube_key = process.env.YOUTUBE_KEY;
 
 const nextConfig = {
-	reactStrictMode: true,
-	staticPageGenerationTimeout: 1000,
+	reactStrictMode: false,
 	async rewrites() {
 		return [
 			{
@@ -15,4 +14,6 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
+module.exports = withInterceptStdout(nextConfig, (text) =>
+	text.includes('Duplicate atom key') ? '' : text
+);
