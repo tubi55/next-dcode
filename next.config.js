@@ -4,6 +4,7 @@ const youtube_key = process.env.YOUTUBE_KEY;
 
 const nextConfig = {
 	reactStrictMode: true,
+	staticPageGenerationTimeout: 1000,
 	async rewrites() {
 		return [
 			{
