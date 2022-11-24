@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
 
 function YoutubeDetail() {
 	const router = useRouter();
