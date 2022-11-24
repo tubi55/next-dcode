@@ -9,7 +9,7 @@ function SetData() {
 
 	useEffect(() => {
 		setVids(result);
-	}, []);
+	}, [result]);
 
 	return null;
 }
